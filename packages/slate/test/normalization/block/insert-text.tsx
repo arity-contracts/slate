@@ -1,5 +1,4 @@
 /** @jsx jsx */
-
 import { jsx } from '../..'
 
 export const input = (
@@ -7,7 +6,6 @@ export const input = (
     <block />
   </editor>
 )
-
 export const output = (
   <editor>
     <block>
