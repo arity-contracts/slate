@@ -1,6 +1,5 @@
-import { CustomExtensions } from '../../../src/interfaces/custom-extensions';
+import { CustomExtensions, ExtendedType } from '../../../src/interfaces/custom-extensions';
 import { Element as BaseElement } from 'slate'
-import { ExtendedType } from 'slate';
 
 
 declare module 'slate' {
