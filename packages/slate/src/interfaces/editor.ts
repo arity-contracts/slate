@@ -34,7 +34,7 @@ import { getWordDistance, getCharacterDistance } from '../utils/string'
  */
 
 export interface Editor {
-  children: Node[]
+  children: NodeEntry<Element>[]
   selection: Range | null
   operations: Operation[]
   marks: Record<string, any> | null
@@ -612,7 +612,7 @@ export const Editor = {
    * Iterate through all of the nodes in the Editor.
    */
 
-  *nodes<T extends Node>(
+  * nodes<T extends Node>(
     editor: Editor,
     options: {
       at?: Location | Span
@@ -973,7 +973,7 @@ export const Editor = {
    * happen inside their content.
    */
 
-  *positions(
+  * positions(
     editor: Editor,
     options: {
       at?: Location
@@ -1594,6 +1594,8 @@ export const Editor = {
  * A helper type for narrowing matched nodes with a predicate.
  */
 
-type NodeMatch<T extends Node> =
+type Temp = Element | Text
+
+type NodeMatch<T extends Temp> =
   | ((node: Node) => node is T)
   | ((node: Node) => boolean)
